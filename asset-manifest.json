@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/itshally/basic-react-todolist/static/css/main.36497136.chunk.css",
-    "main.js": "/itshally/basic-react-todolist/static/js/main.24591e0c.chunk.js",
-    "main.js.map": "/itshally/basic-react-todolist/static/js/main.24591e0c.chunk.js.map",
-    "runtime-main.js": "/itshally/basic-react-todolist/static/js/runtime-main.43314668.js",
-    "runtime-main.js.map": "/itshally/basic-react-todolist/static/js/runtime-main.43314668.js.map",
-    "static/js/2.9aa0a6e2.chunk.js": "/itshally/basic-react-todolist/static/js/2.9aa0a6e2.chunk.js",
-    "static/js/2.9aa0a6e2.chunk.js.map": "/itshally/basic-react-todolist/static/js/2.9aa0a6e2.chunk.js.map",
-    "index.html": "/itshally/basic-react-todolist/index.html",
-    "precache-manifest.4ff8646cb3a1ed6f8ec2082759f72123.js": "/itshally/basic-react-todolist/precache-manifest.4ff8646cb3a1ed6f8ec2082759f72123.js",
-    "service-worker.js": "/itshally/basic-react-todolist/service-worker.js",
-    "static/css/main.36497136.chunk.css.map": "/itshally/basic-react-todolist/static/css/main.36497136.chunk.css.map"
+    "main.css": "/basic-react-todolist/static/css/main.36497136.chunk.css",
+    "main.js": "/basic-react-todolist/static/js/main.1f801703.chunk.js",
+    "main.js.map": "/basic-react-todolist/static/js/main.1f801703.chunk.js.map",
+    "runtime-main.js": "/basic-react-todolist/static/js/runtime-main.f34be885.js",
+    "runtime-main.js.map": "/basic-react-todolist/static/js/runtime-main.f34be885.js.map",
+    "static/js/2.9aa0a6e2.chunk.js": "/basic-react-todolist/static/js/2.9aa0a6e2.chunk.js",
+    "static/js/2.9aa0a6e2.chunk.js.map": "/basic-react-todolist/static/js/2.9aa0a6e2.chunk.js.map",
+    "index.html": "/basic-react-todolist/index.html",
+    "precache-manifest.2932e9cea0e3b1d8383fb3aa7e072457.js": "/basic-react-todolist/precache-manifest.2932e9cea0e3b1d8383fb3aa7e072457.js",
+    "service-worker.js": "/basic-react-todolist/service-worker.js",
+    "static/css/main.36497136.chunk.css.map": "/basic-react-todolist/static/css/main.36497136.chunk.css.map"
   }
 }
