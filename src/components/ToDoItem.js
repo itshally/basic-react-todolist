@@ -40,9 +40,12 @@ export class ToDoItem extends Component {
     }
 }
 
+//PropTypes
 ToDoItem.propTypes = {
-    todo: PropTypes.object.isRequired
-}
+    todo: PropTypes.object.isRequired,
+    markComplete: PropTypes.func.isRequired,
+    deleteTodo: PropTypes.func.isRequired
+  }
 
 // delete button style
 const btnStyle = {

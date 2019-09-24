@@ -5,24 +5,24 @@ import './App.css';
 import Header from './components/layout/Header';
 import AddToDo from './components/AddToDo';
 import About from './components/pages/About';
-import uuid from 'uuid';
+// import uuid from 'uuid';
+import Axios from 'axios';
 
 class App extends Component {
   //default values/data of the todo list
   state = { //javascript object
-            todos: [
-              {
-                id: 1,
-                title: 'Take out the trash',
-                completed: false
-              },
-              {
-                id: 2,
-                title: 'Practice React js',
-                completed: false
-              }
-            ]
+            todos: []
           }
+  
+  //initial request; another lifecycle
+  componentDidMount() {
+    Axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
+         .then(response => {
+            this.setState({
+              todos: response.data
+            })
+         });
+  }
 
   //Toggle Complete
   markComplete = (id) => {
@@ -38,21 +38,22 @@ class App extends Component {
   
   //deletes the item
   deleteTodo = (id) => {
-    //filter() returns another array 
-    this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)]})
+    Axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+         .then(response => 
+            //filter() returns another array 
+            this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)]})
+          );
   }
 
   //add list item
   addToDo = (title) => {
-    const newToDo = {
-      id: uuid.v4(),
-      title,
-      completed: false
-    }
-
-    this.setState({
-      todos: [...this.state.todos, newToDo]
-    })
+    Axios.post('https://jsonplaceholder.typicode.com/todos', {
+              title,
+              completed: false
+            })
+         .then(response => 
+            this.setState({ todos: [...this.state.todos, response.data] })
+          );
   }
 //Note: render() is the lifecycle method. It is required because
 //      it renders the component in the browser and that's called JSX (JavaScript XML)
@@ -64,11 +65,11 @@ class App extends Component {
             <Header/>
             <Route exact path="/" render={ props=> (
               <React.Fragment>
+                <AddToDo addToDo={this.addToDo}/>
                 <Todos todos={this.state.todos} 
                   markComplete={this.markComplete} //calling markComplete function
                   deleteTodo={this.deleteTodo} //calling deleteToDo function
                   /> 
-                <AddToDo addToDo={this.addToDo}/>
               </React.Fragment>
             )} /> 
             <Route path="/about" component={About} />
