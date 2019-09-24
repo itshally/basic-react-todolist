@@ -1,3 +1,13 @@
+#Basic React Todo List
+
+This is a basic example of a react application. 
+
+Here is a [Live Demo](https://itshally.github.io/basic-react-todolist) to view my repository.
+
+But, you can watch the tutorial here at [Traversy Media](https://www.youtube.com/watch?v=sBws8MSXN7A) and learn through his React JS Crash Course - 2019.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
