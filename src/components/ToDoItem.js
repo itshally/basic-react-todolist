@@ -1,28 +1,39 @@
 import React, { Component } from 'react'
+
+//proptypes are sort of validation for properties that a component
+//should have to set the type, if it's required or not...etc.
 import PropTypes from 'prop-types';
 
 export class ToDoItem extends Component {
 
+    //a style function for the div element (line 22)
     getStyle = () => {
         return {
             background: '#f4f4f4',
             padding: '10px',
             borderBottom: '1px solid #ccc',
+            //an if-else statement if the todo item is completed or not (ternary operator)
             textDecoration: this.props.todo.completed ? 'line-through' : 'none'
         }
     }
 
     render() {
+        //destructuring to get the variables from the props
         const { id, title } = this.props.todo;
         return (
             <div style={this.getStyle()}>
                 <p>
                     {/* checkbox */}
-                    <input type="checkbox" onChange={this.props.markComplete.bind(this, id)} />
+                    <input type="checkbox"
+                           //adding an "onChange" event; "markComplete" is a method
+                           //bind() sets "this" value as the item's id
+                           onChange={this.props.markComplete.bind(this, id)} 
+                           /> 
                     {/* todo item */}
                     {title}
                     {/* delete button */}
-                    <button style={btnStyle}>x</button>
+                    <button onClick={this.props.deleteTodo.bind(this, id)} 
+                             style={btnStyle}>x</button>
                 </p>
             </div>
         )
@@ -33,6 +44,7 @@ ToDoItem.propTypes = {
     todo: PropTypes.object.isRequired
 }
 
+// delete button style
 const btnStyle = {
     background: '#ff0000',
     color: '#ffffff',
@@ -43,4 +55,4 @@ const btnStyle = {
     float: 'right'
 }
 
-export default ToDoItem
+export default ToDoItem;
